@@ -1,3 +1,28 @@
+<!-- =====================================================================
+     INDEPENDENT REPRODUCTION (this fork)
+     ===================================================================== -->
+> ## 🔬 This fork: a label-free TTRL reproduction on a fresh 2026 base model
+>
+> We independently reproduced TTRL on **`Qwen/Qwen3.5-0.8B-Base`** (a 2026 hybrid
+> linear-attention model the paper never used) on **MATH-L1**, on a **single H100**, with
+> **no ground-truth labels**:
+>
+> | Method | pass@1 | maj@8 |
+> |---|---:|---:|
+> | Base (no TTRL) | 75.29 | 93.02 |
+> | **TTRL (label-free)** | **81.10** | 88.37 |
+>
+> **+5.81 pts pass@1 (+8% relative), zero labels.**
+>
+> - 📈 Full writeup, ASCII diagrams & plots: [`reproduction/README.md`](reproduction/README.md)
+> - 🧭 The complete engineering journey (every blocker + fix): [`reproduction/PROCESS.md`](reproduction/PROCESS.md)
+> - 🤗 Hugging Face writeup: https://huggingface.co/OwOpeepeepoopoo/ttrl-qwen3.5-0.8b-math-l1
+> - ▶️ Reproduce: `bash run.sh` (installs the stack, runs base eval → TTRL train → trained eval → `EVAL.md`)
+>
+> The original authors' README follows below.
+
+---
+
 <div align="center">
 
 # TTRL: Test-Time Reinforcement Learning
