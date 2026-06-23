@@ -136,7 +136,7 @@ log "STAGE train: standalone TTRL GRPO (no verl) — test-time RL on ${TASK} tes
 $PY -u scripts/ttrl_grpo.py --model "$MODEL_ID" \
     --data "$TEST_JSON" \
     --out "$HFDIR" --artifacts "$ART" \
-    --steps "${TTRL_STEPS:-24}" --group-size 8 --prompts-per-step 8 \
+    --steps "${TTRL_STEPS:-16}" --group-size 8 --prompts-per-step 8 \
     --max-new-tokens 1024 --lr 4e-6 --kl-coef 0.0 2>&1 | tee "$ART/train.log" | tail -80
 TRAIN_RC=${PIPESTATUS[0]}
 [ "$TRAIN_RC" -ne 0 ] && log "training returned non-zero ($TRAIN_RC); see train.log"
